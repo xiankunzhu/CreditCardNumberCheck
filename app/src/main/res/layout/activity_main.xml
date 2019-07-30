@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:src="@drawable/generic_card"
+            tools:ignore="ContentDescription" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp">
+
+            <LinearLayout
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/line_margin"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_credit_card_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="#2fa881"
+                    android:textSize="18sp"
+                    android:hint="Credit card number" />
+
+                <TextView
+                    android:id="@+id/et_ccn_bank"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/colorPrimary" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cvv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/line_margin"
+                android:layout_below="@id/card"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_cvv"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:hint="cvv"
+                    android:inputType="phone"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="#2fa881"
+                    android:textSize="18sp"
+                    tools:ignore="LabelFor" />
+
+                <ImageView
+                    android:id="@+id/img_ccv"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:src="@drawable/cvv_code"
+                    tools:ignore="ContentDescription" />
+
+            </LinearLayout>
+
+            <DatePicker
+                android:id="@+id/date_dp"
+                android:layout_below="@id/cvv"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:datePickerMode="spinner"/>
+
+            <EditText
+                android:id="@+id/et_first_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/line_margin"
+                android:layout_below="@id/date_dp"
+                android:background="@null"
+                android:hint="@string/first_name"
+                android:inputType="textCapWords"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#181818"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/et_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/line_margin"
+                android:layout_below="@id/et_first_name"
+                android:background="@null"
+                android:hint="@string/last_name"
+                android:inputType="textCapWords"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#181818"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorPrimaryDark"
+            android:enabled="true"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/next"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
