@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     Activity mContext;
     EditText firstName_et;
     EditText lastName_et;
-
+    ImageView cvv_big_img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +41,27 @@ public class MainActivity extends AppCompatActivity {
         lastName_et = (EditText) findViewById(R.id.et_last_name);
         date_dp = (DatePicker) findViewById(R.id.date_dp) ;
 
-
+        cvv_big_img = (ImageView) findViewById(R.id.img_cvv_big);
         cvv_img = (ImageView) findViewById(R.id.img_ccv);
         bank_tx = (TextView) findViewById(R.id.et_ccn_bank);
+
+        cvv_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cvv_big_img.getVisibility() == View.GONE) {
+                    cvv_big_img.setVisibility(View.VISIBLE);
+                } else {
+                    cvv_big_img.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        cvv_big_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cvv_big_img.setVisibility(View.GONE);
+            }
+        });
 
         final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mContext);
         alertDialogBuilder.setPositiveButton("OK", null);
